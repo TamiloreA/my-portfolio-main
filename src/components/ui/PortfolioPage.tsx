@@ -79,7 +79,7 @@ const EASE: [number, number, number, number] = [0.76, 0, 0.24, 1];
 // --- COMPONENTS ---
 
 // 0. PRELOADER COMPONENT
-const WORDS = ["DigitalArt", "Interaction", "Web Developer", "UX/UI Design", "2024", "Minimal Portfolio", "Minimal Loader"];
+const WORDS = ["Full Stack Engineer", "Backend Engineer", "Mobile Engineer", "Web Developer", "API Development", "Ambitious", "Goal Driven", "Problem Solver", "Tammy"];
 
 function Preloader({ onComplete }: { onComplete: () => void }) {
     const [index, setIndex] = useState(0);
@@ -117,7 +117,7 @@ function Preloader({ onComplete }: { onComplete: () => void }) {
                         animate={{ y: 0, filter: "blur(0px)", opacity: 1 }}
                         exit={{ y: "-100%", filter: "blur(10px)", opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="text-3xl md:text-4xl font-normal tracking-tight"
+                        className="text-xl md:text-4xl font-normal tracking-tight whitespace-nowrap"
                     >
                         {WORDS[index]}
                     </motion.span>
@@ -451,6 +451,11 @@ function ProjectList() {
                                 onMouseEnter={() => setHoveredId(project.id)}
                                 onMouseLeave={() => setHoveredId(null)}
                                 className="group relative flex items-center text-[12vw] sm:text-[10vw] md:text-[6.5vw] lg:text-[5.5rem] leading-[1.2] md:leading-[1.1] font-bold tracking-[-0.03em] cursor-pointer w-full text-left py-1"
+                                onClick={() => {
+                                    if (project.id === 'deskit') {
+                                        window.location.href = '/projects/deskit';
+                                    }
+                                }}
                             >
                                 <div className="absolute -left-16 md:-left-28 flex items-center justify-end pr-4 md:pr-8 w-16 md:w-28 h-full pointer-events-none">
                                     <motion.div
@@ -687,7 +692,7 @@ export default function PortfolioPage() {
             }}
             className="flex justify-between items-center mb-16 relative"
         >
-          <div className="text-sm font-medium tracking-tight">Faldnag</div>
+          <div className="text-xs font-mono mb-1 tracking-[0.2em]">TAMMY // PORTFOLIO</div>
           
           <nav className="hidden md:flex gap-12 text-sm font-medium">
              <a href="#" className="hover:opacity-60 transition-opacity">About</a>
@@ -726,13 +731,13 @@ export default function PortfolioPage() {
 
           <h1 className="text-[6vw] leading-none font-normal tracking-[-0.03em] uppercase w-full mb-12">
             <SplitText delay={1.5} className="flex-nowrap">
-                I’M DAMIOLA — A UI/UX DESIGNER
+                I'M TAMMY — A FULL STACK
             </SplitText>
             <SplitText delay={1.7} className="flex-nowrap">
-                SHAPING DIGITAL PRODUCTS
+                & MOBILE ENGINEER BUILDING
             </SplitText>
             <SplitText delay={1.9} className="flex-nowrap">
-                FOR STARTUPS AND BOLD IDEAS
+                SEAMLESS DIGITAL EXPERIENCES
             </SplitText>
           </h1>
           
@@ -743,7 +748,7 @@ export default function PortfolioPage() {
             }}
             className="flex flex-col md:flex-row justify-between items-start md:items-end w-full text-gray-500 text-sm md:text-base mt-8"
           >
-             <p>From dashboards to dating apps, from fintech to web3</p>
+             <p>From APIs to mobile apps, from web platforms to scalable systems</p>
              <ModeSwitcher mode={activeMode} setMode={setActiveMode} />
           </motion.div>
         </section>
@@ -781,7 +786,7 @@ export default function PortfolioPage() {
                     transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
                     className="text-xl uppercase max-w-sm mt-4 leading-tight"
                 >
-                    I’M DAMIOLA — A UI/UX DESIGNER SHAPING DIGITAL PRODUCTS
+                    I'M TAMMY — A FULL STACK & MOBILE ENGINEER
                 </motion.div>
             </div>
             
@@ -793,10 +798,10 @@ export default function PortfolioPage() {
                 className="text-gray-500 text-lg leading-relaxed max-w-md md:ml-auto"
             >
                 <p>
-                  I’m <span className="font-semibold text-inherit">Damilola</span>— a UI/UX <span className="italic font-serif">designer</span> shaping digital products for startups, enterprises, and bold ideas. 
+                  I'm <span className="font-semibold text-inherit">Tammy</span> — a full stack & mobile <span className="italic font-serif">engineer</span> building seamless digital experiences across web and mobile platforms. 
                 </p>
                 <p className="mt-4">
-                  From dashboards to dating apps, from fintech to web3 — I turn confusion into clarity.
+                  From APIs to mobile apps, from scalable backends to polished frontends — I turn ideas into production-ready products.
                 </p>
             </motion.div>
           </div>
@@ -986,7 +991,7 @@ export default function PortfolioPage() {
                 className="text-5xl md:text-6xl font-bold tracking-tighter leading-[0.9]"
               >
                 I don&apos;t just <br />
-                <span className="font-serif italic font-light">design</span> screens.
+                <span className="font-serif italic font-light">write</span> code.
               </motion.h2>
 
               <motion.p 
@@ -996,7 +1001,7 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
                 className="text-gray-400 text-sm leading-relaxed max-w-xs"
               >
-                I <span className="italic font-serif">design</span> decisions, flows, and moments where users stop thinking and start moving.
+                I <span className="italic font-serif">engineer</span> systems, experiences, and products that work flawlessly across every platform.
               </motion.p>
 
               {/* Faint Grid Visual */}
@@ -1017,9 +1022,9 @@ export default function PortfolioPage() {
                >
                  <h4 className="text-white text-sm font-medium mb-4">I believe:</h4>
                  <ul className="space-y-2 text-gray-400 text-sm">
-                    <li>• Good design is quiet</li>
-                    <li>• Clarity beats decoration</li>
-                    <li>• Products should respect people&apos;s time</li>
+                    <li>• Clean architecture outlasts clever hacks</li>
+                    <li>• Performance is a feature, not an afterthought</li>
+                    <li>• Great products ship fast and scale gracefully</li>
                  </ul>
                </motion.div>
 
@@ -1030,7 +1035,7 @@ export default function PortfolioPage() {
                  transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
                  className="text-gray-500 text-sm leading-relaxed max-w-xs"
                >
-                 When I&apos;m not designing, I&apos;m learning, experimenting, or thinking about how tech shapes behavior.
+                 When I&apos;m not coding, I&apos;m learning, experimenting, or thinking about how technology shapes the future.
                </motion.p>
             </div>
 
@@ -1041,9 +1046,13 @@ export default function PortfolioPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, root: wrapperRef }}
                   transition={{ duration: 1, delay: 0.4, ease: EASE }}
-                  className="w-full h-[699px] aspect-[4/5] bg-[#0E0E0E] rounded-2xl border border-white/5"
+                  className="w-full h-[699px] aspect-[4/5] bg-[#0E0E0E] rounded-2xl border border-white/5 overflow-hidden"
                 >
-                    {/* Placeholder content or image can go here later */}
+                    <img 
+                      src="/tammy.jpg" 
+                      alt="Tammy" 
+                      className="w-full h-full object-cover"
+                    />
                 </motion.div>
             </div>
           </div>
@@ -1059,18 +1068,18 @@ export default function PortfolioPage() {
             >
                 <h3 className="text-4xl md:text-5xl font-bold mb-6">What I Do</h3>
                 <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
-                I design end-to-end product experiences — from messy ideas to polished interfaces ready for scale.
+                I build end-to-end products — from backend architecture to pixel-perfect frontends and native mobile apps.
                 </p>
             </motion.div>
 
             {/* Service Cards List */}
             <div className="w-full flex flex-col gap-3">
                 {[
-                  { name: "UX Strategy & Research", bg: "#141414" },
-                  { name: "User Flows & IA", bg: "#191919" },
-                  { name: "High-Fidelity UI Design", bg: "#1D1D1D" },
-                  { name: "Design Systems", bg: "#212121" },
-                  { name: "Product Thinking", bg: "#1D1D1D" }
+                  { name: "Full Stack Web Development", bg: "#141414" },
+                  { name: "Mobile App Development", bg: "#191919" },
+                  { name: "API Design & Architecture", bg: "#1D1D1D" },
+                  { name: "Cloud & DevOps", bg: "#212121" },
+                  { name: "System Design & Scalability", bg: "#1D1D1D" }
                 ].map((service, i) => (
                 <motion.div
                     key={service.name}
