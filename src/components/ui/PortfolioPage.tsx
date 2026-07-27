@@ -384,13 +384,13 @@ const PROJECTS = [
 
 // 6. WORK EXPERIENCE DATA
 const WORK_EXPERIENCE = [
-    { company: "Punch", locationType: "Remote", location: "USA", role: "Product design lead / product ideation engineer", startDate: "Aug 2025", endDate: "" },
-    { company: "Clorizon", locationType: "Remote", location: "Nigeria", role: "Senior product designer", startDate: "2025", endDate: "Remote, USA" },
-    { company: "Edurex", locationType: "Hybrid", location: "Nigeria", role: "Product manager / UX designer", startDate: "Apr 2025", endDate: "Nov 2025" },
-    { company: "Reveal", locationType: "Remote", location: "Nigeria", role: "Product Manager / UIUX designer", startDate: "Feb 2024", endDate: "Mar 2025" },
-    { company: "Gurugeeks", locationType: "Hybrid", location: "Nigeria", role: "Product designer", startDate: "Sep 2023", endDate: "Apr 2025" },
-    { company: "Crayon Technologies", locationType: "Remote", location: "Nigeria", role: "Product design lead", startDate: "Dec 2023", endDate: "Feb 2024" },
-    { company: "Aisdoc", locationType: "Remote", location: "Kenya", role: "Product designer", startDate: "Jan 2023", endDate: "Apr 2023" },
+    { company: "Punch", locationType: "Remote", location: "USA", role: "Full Stack Engineer / Mobile Engineer", startDate: "Aug 2025", endDate: "" },
+    { company: "Clorizon", locationType: "Remote", location: "Nigeria", role: "Senior Software Engineer", startDate: "2025", endDate: "Remote, USA" },
+    { company: "Edurex", locationType: "Hybrid", location: "Nigeria", role: "Mobile Engineer / Software Engineer", startDate: "Apr 2025", endDate: "Nov 2025" },
+    { company: "Reveal", locationType: "Remote", location: "Nigeria", role: "Software Engineer / Mobile Engineer", startDate: "Feb 2024", endDate: "Mar 2025" },
+    { company: "Gurugeeks", locationType: "Hybrid", location: "Nigeria", role: "Full Stack Software Engineer", startDate: "Sep 2023", endDate: "Apr 2025" },
+    { company: "Crayon Technologies", locationType: "Remote", location: "Nigeria", role: "Lead Software Engineer", startDate: "Dec 2023", endDate: "Feb 2024" },
+    { company: "Aisdoc", locationType: "Remote", location: "Kenya", role: "Mobile Engineer", startDate: "Jan 2023", endDate: "Apr 2023" },
 ];
 
 function ProjectList() {
@@ -714,7 +714,7 @@ export default function PortfolioPage() {
 
         {/* --- 2. HERO SECTION --- */}
         <section className="mb-32 relative">
-          {/* Memoji Cluster */}
+          {/* Photo Cluster */}
           <motion.div
             variants={{
                 hidden: { opacity: 0, y: 20 },
@@ -726,7 +726,7 @@ export default function PortfolioPage() {
             }}
             className="mb-0 ml-20"
           >
-            <img src="/memoji.svg" alt="Memoji" className="h-[80px] md:h-[100px] w-auto object-contain" />
+            <img src="/hero-photos.jpg" alt="Tammy" className="h-[80px] md:h-[100px] w-auto object-contain mix-blend-multiply" />
           </motion.div>
 
           <h1 className="text-[6vw] leading-none font-normal tracking-[-0.03em] uppercase w-full mb-12">
@@ -1005,9 +1005,25 @@ export default function PortfolioPage() {
               </motion.p>
 
               {/* Faint Grid Visual */}
-              <div className="grid grid-cols-3 gap-1 w-fit mt-8 opacity-20">
-                 {[...Array(9)].map((_, i) => (
-                    <div key={i} className="w-32 h-32 border border-white/30 rounded-sm" />
+              <div className="grid grid-cols-3 gap-1 w-full mt-8">
+                 {[
+                   { img: "/grid-photo-1.jpg" },
+                   null,
+                   { img: "/grid-photo-4.jpg" },
+                   null,
+                   { img: "/grid-photo-2.jpg" },
+                   null,
+                   { img: "/grid-photo-5.jpg" },
+                   null,
+                   { img: "/grid-photo-3.jpg" },
+                 ].map((cell, i) => (
+                    <div key={i} className="aspect-square rounded-sm overflow-hidden border border-white/10">
+                      {cell?.img ? (
+                        <img src={cell.img} alt="Tammy" className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="w-full h-full bg-transparent" />
+                      )}
+                    </div>
                  ))}
               </div>
             </div>
@@ -1129,8 +1145,8 @@ export default function PortfolioPage() {
                   transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
                 >
                   <div className="text-xs text-white/40 font-medium mb-1">Email</div>
-                  <a href="mailto:Ogunyomigbenro656@gmail.com" className="text-sm md:text-base text-white hover:text-white/70 transition-colors">
-                    Ogunyomigbenro656@gmail.com
+                  <a href="mailto:tamiloreakinsola@gmail.com" className="text-sm md:text-base text-white hover:text-white/70 transition-colors">
+                    tamiloreakinsola@gmail.com
                   </a>
                 </motion.div>
 
@@ -1142,8 +1158,8 @@ export default function PortfolioPage() {
                   transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
                 >
                   <div className="text-xs text-white/40 font-medium mb-1">Phone</div>
-                  <a href="tel:+2347083778524" className="text-sm md:text-base text-white hover:text-white/70 transition-colors">
-                    +234 7083778524
+                  <a href="tel:+2349166428213" className="text-sm md:text-base text-white hover:text-white/70 transition-colors">
+                    +234 9166428213
                   </a>
                 </motion.div>
 
@@ -1157,21 +1173,22 @@ export default function PortfolioPage() {
                   <div className="text-xs text-white/40 font-medium mb-3">Socials</div>
                   <div className="flex items-center gap-4">
                     {/* LinkedIn */}
-                    <a href="#" className="text-white hover:text-white/60 transition-colors" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/akinsola-oluwatamilore-b7337b328/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/60 transition-colors" aria-label="LinkedIn">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                       </svg>
                     </a>
                     {/* X / Twitter */}
-                    <a href="#" className="text-white hover:text-white/60 transition-colors" aria-label="X">
+                    <a href="https://x.com/tammyboi__?s=11" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/60 transition-colors" aria-label="X">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>
                     </a>
-                    {/* Behance */}
-                    <a href="#" className="text-white hover:text-white/60 transition-colors" aria-label="Behance">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M7.5 11c1.38 0 2.5-1.12 2.5-2.5S8.88 6 7.5 6H3v5h4.5zm1 2H3v5h5.5c1.38 0 2.5-1.12 2.5-2.5S9.88 13 8.5 13zM21 6.5a1 1 0 0 0-1-1h-5a1 1 0 0 0-1 1v.01a1 1 0 0 0 1 .99h5a1 1 0 0 0 1-1v-.01zM14 13c0 2.76 2.24 5 5 5 1.63 0 3.07-.78 3.98-2h-2.24c-.52.63-1.3 1-2.14 1a2.5 2.5 0 0 1-2.4-1.8h7.3c.1-.39.15-.79.15-1.2 0-2.76-2.24-5-5-5s-5 2.24-5 5zm2.6-1.2a2.5 2.5 0 0 1 4.8 0h-4.8z"/>
+                    {/* Email */}
+                    <a href="mailto:tamiloreakinsola@gmail.com" className="text-white hover:text-white/60 transition-colors" aria-label="Email">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
                     </a>
                   </div>
@@ -1186,12 +1203,12 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.6, delay: 0.4, ease: EASE }}
                 className="flex items-end gap-6 md:gap-10 text-xs md:text-sm text-white/40 md:self-end mb-4"
               >
-                <span>Design by <span className="text-white font-medium ml-1">Gbenro Ogunyomi</span></span>
+                <span>Design by <span className="text-white font-medium ml-1">Emmanuel Quadri</span></span>
                 <span>Developed by <span className="text-white font-medium ml-1">Tammy</span></span>
               </motion.div>
             </div>
 
-            {/* Memoji */}
+            {/* Photo */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1199,7 +1216,7 @@ export default function PortfolioPage() {
               transition={{ duration: 1, delay: 0.3, ease: EASE }}
               className="relative w-full flex justify-center items-end mt-8 md:mt-0 h-[200px] md:h-[280px] -mb-16 md:-mb-26 z-10"
             >
-              <img src="/memoji.svg" alt="Memoji" className="h-full w-auto object-contain" />
+              <img src="/grid-photo-2.jpg" alt="Tammy" className="h-full w-auto object-cover rounded-2xl" />
             </motion.div>
 
             {/* Large Watermark Text */}

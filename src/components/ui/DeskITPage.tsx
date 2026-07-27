@@ -67,7 +67,7 @@ export default function DeskITPage() {
                   </div>
                   <div>
                       <div className="text-black/50 mb-1 text-[20px] tracking-wider font-[400]">Role</div>
-                      <div className="font-[400] text-[40px]">UI/UX Designer</div>
+                      <div className="font-[400] text-[40px]">Software Engineer</div>
                   </div>
                   <div>
                       <div className="text-black/50 mb-1 text-[20px] tracking-wider font-[400]">Platform</div>
